@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Menu_Pausa : MonoBehaviour
 {
     public GameObject pause;
+    public GameObject miraCanvas; // Canvas "Mira"
     public bool isPaused;
 
     void Start()
@@ -36,6 +37,9 @@ public class Menu_Pausa : MonoBehaviour
         pause.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+
+        
+        miraCanvas.SetActive(false);
     }
 
     public void Resumegame()
@@ -45,6 +49,9 @@ public class Menu_Pausa : MonoBehaviour
         pause.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+
+        
+        miraCanvas.SetActive(true);
     }
 
     public void GoToMainMenu()
